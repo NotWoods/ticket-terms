@@ -1,0 +1,176 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: 	local('Roboto Regular'), 
+		url('../font/Roboto-Regular.ttf');
+}
+
+body {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:18px;
+	font-family: 'Roboto', sans-serif;
+	background: #f2f2f2;
+}
+
+/* Text sizes *****************************************************************/
+
+.micro {
+	font-size: 12px;
+}
+
+.small {
+	font-size: 14px;
+}
+
+.medium {
+	font-size: 18px;
+}
+
+.large {
+	font-size: 22px;
+}
+
+/* Action Bar *****************************************************************/
+
+header {
+	background-color: #da4d31;
+	height: 45px; /* 48 - 3 */
+	/* Portrait: 48dp; Landscape: 40dp; Tablet: 50dp */
+	border-top: 1px solid #dc573d;
+	border-bottom: 2px solid #ce492e;
+	font-size: 22px; /* Large */
+	box-shadow: 0; /* 10px down */
+}
+
+header .launcher {
+	width: 48px;
+	height: 48px;
+	vertical-align: middle;
+	margin-top: -2px;
+	margin-left: 8px;
+}
+
+header h1 {
+	color: white;
+	font-weight: normal;
+	font-size: 22px;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 46px; /* 48 - 2 */
+	display: inline-block;
+}
+
+header ul {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	height: 48px;
+	margin: -1px;
+	float: right;
+}
+
+header li {
+	margin: 0;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	padding: 8px;
+	vertical-align: middle;
+}
+
+header li:active, header li:hover {
+	background: rgba(255,255,255,0.14);
+}
+
+header li img {
+	width: 32px;
+	height: 32px;
+}
+
+#start { display: block; }
+#stop { display: none; }
+
+/* Game ***********************************************************************/
+
+#word {
+	/*border-bottom: 1px solid rgba(0,0,0,0.14);*/
+	margin: 8px;
+	margin-bottom: 48px;
+	position: relative;
+}
+
+#word span {
+	height: 3px;
+	border: 1px solid rgba(0,0,0,0.14);
+	border-top: 0;
+	position: absolute;
+	width: 100%;
+	bottom: -1px;
+	left: -1px;
+}
+
+.button {
+	background: #999999;
+	border-radius: 1px;
+	display: inline-block;
+	margin: 8px;
+	width: calc(50% - 16px);
+}
+
+.color {
+	background: #da563c;
+}
+
+.button span {
+	line-height: 48px;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+.button img {
+	width: 32px;
+	height: 32px;
+	padding: 8px;
+	/*border-left: 1px solid rgba(0,0,0,0.14);*/ /*Should be 24px tall*/
+	vertical-align: middle;
+	float: right;
+}
+
+.info {
+	display: inline-block;
+	margin: 8px;
+	width: calc(50% - 16px);
+}
+
+.info span {
+	line-height: 48px;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+.info img {
+	width: 32px;
+	height: 32px;
+	padding: 8px;
+	/*border-left: 1px solid rgba(0,0,0,0.14);*/ /*Should be 24px tall*/
+	vertical-align: middle;
+	float: right;
+}
+
+.time { position: relative; }
+#divider {
+	position: absolute;
+	border-left: 1px solid rgba(0,0,0,0.14);
+	right: -7px;
+	margin: 0;
+	height:24px;
+	display: block;
+	bottom: 12px;
+}
+
+#norm { display:block; }
+#left { display:none; }

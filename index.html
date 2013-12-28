@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" media="screen" type="text/css" href="css/stylesheet.css"/>
+		<link rel="icon" href="favicon.ico">
+		
+		<title>Ticket Terms</title>
+		
+		<meta name="keywords" content="ticket, terms, word, password, catchphrase, guess, party, game, phrase, unknown">
+		<meta name="description" content="Can you guess the ticket terms?">
+		<meta name="author" content="Tiger Oakes">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+	</head>
+	<body>
+		<header> <!-- Action Bar -->
+			<img src="img/ic_launcher.png" alt="Ticket Terms" class="launcher">
+			<h1>Ticket Terms</h1>
+			
+			<!-- Icons -->
+			<ul>
+				<li id="game-button">
+					<img id="start" src="img/start.png" alt="Start Game">
+					<img id="stop" src="img/stop.png" alt="End Game">
+				</li>
+				<li id="help-button"><img src="img/help.png" alt="Help"></li>
+				<li id="settings-button"><img src="img/settings.png" alt="Settings"></li>
+			</ul>
+		</header>
+		<main>
+			<article id="game">
+				<p id="word">Onomatopeia<span></span></p>
+				
+				<p class="next button color">
+					<span>Next</span> 
+					<img src="img/next.png" alt="Next">
+				</p>
+				<p class="skip button" style="margin-left: 0;">
+					<span>Skip</span>
+					<img src="img/skip.png" alt="Skip">
+				</p>
+				
+				<p class="time info">
+					<span>0:00.00</span> 
+					<img id="norm" src="img/time.png" alt="Time Elasped">
+					<img id="left" src="img/time_left.png" alt="Time Remaining">
+					
+					<span id="divider"></span>
+				</p>
+				<p class="score info" style="margin-left: 0;">
+					<span>1 point</span> 
+					<img src="img/score.png" alt="Score">
+				</p>
+			</article>
+			
+			<!--<article id="help">
+			</article>
+			
+			<article id="settings">
+				<p id="set-time">
+					<span>Time Limit</span>
+				</p>
+				<p id="dictionary">
+					<span>Dictionary</span>
+				</p>
+			</article>-->
+		</main>
+	</body>
+	<script src="js/main.js"></script>
+</html>
