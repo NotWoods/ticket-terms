@@ -12,9 +12,9 @@
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+		<!-- JavaScript at the bottom. -->
 	</head>
-	<body>
+	<body onload="load()">
 		<header> <!-- Action Bar -->
 			<img src="img/ic_launcher.png" alt="Ticket Terms" class="launcher">
 			<h1>Ticket Terms</h1>
@@ -31,13 +31,13 @@
 		</header>
 		<main>
 			<article id="game">
-				<p id="word">Onomatopeia<span></span></p>
+				<p id="word"><span id="word-item">word</span><span class="nibs"></span></p>
 				
-				<p class="next button color">
+				<p class="next button color" onclick="next('next_btn')">
 					<span>Next</span> 
 					<img src="img/next.png" alt="Next">
 				</p>
-				<p class="skip button" style="margin-left: 0;">
+				<p class="skip button" style="margin-left: 0;" onclick="next(skip_btn)">
 					<span>Skip</span>
 					<img src="img/skip.png" alt="Skip">
 				</p>
@@ -50,23 +50,27 @@
 					<span id="divider"></span>
 				</p>
 				<p class="score info" style="margin-left: 0;">
-					<span>1 point</span> 
+					<span id="scoreItem">0 point</span> 
 					<img src="img/score.png" alt="Score">
 				</p>
 			</article>
 			
-			<!--<article id="help">
+			<article id="help">
 			</article>
 			
 			<article id="settings">
 				<p id="set-time">
 					<span>Time Limit</span>
+					<span class="value">None</span>
 				</p>
 				<p id="dictionary">
-					<span>Dictionary</span>
+					<h2>Dictionary</h2>
+					<span style="margin-left: 8px; color: rgba(0,0,0,0.3);">Words must be comma seperated.</span>
+					<textarea id="dic" rows="10" onblur="save()">word</textarea>
+					<span class="nibs"></span>
 				</p>
-			</article>-->
+			</article>
 		</main>
 	</body>
-	<script src="js/main.js"></script>
+	<script src="js/game.js"></script>
 </html>

@@ -13,6 +13,7 @@ body {
 	font-size:18px;
 	font-family: 'Roboto', sans-serif;
 	background: #f2f2f2;
+	overflow-x: hidden;
 }
 
 /* Text sizes *****************************************************************/
@@ -43,6 +44,7 @@ header {
 	border-bottom: 2px solid #ce492e;
 	font-size: 22px; /* Large */
 	box-shadow: 0; /* 10px down */
+	width: calc(100% + 1px); /* fix for the width being a pixel off */
 }
 
 header .launcher {
@@ -101,9 +103,10 @@ header li img {
 	margin: 8px;
 	margin-bottom: 48px;
 	position: relative;
+	padding: 4px;
 }
 
-#word span {
+#word .nibs {
 	height: 3px;
 	border: 1px solid rgba(0,0,0,0.14);
 	border-top: 0;
@@ -114,15 +117,41 @@ header li img {
 }
 
 .button {
-	background: #999999;
-	border-radius: 1px;
+	background: rgba(102,102,102,0.25);
+	border-top: 1px solid rgba(152,152,152,0.25);
+	border-left: 1px solid rgba(97,97,97,0.25);
+	border-right: 1px solid rgba(97,97,97,0.25);
+	border-bottom: 1px solid rgba(76,76,76,0.25);
+	box-shadow: 0 1px 1px #ccc;
+	
+	border-radius: 3px;
 	display: inline-block;
 	margin: 8px;
 	width: calc(50% - 16px);
 }
 
+.button:active {
+	background: rgba(102,102,102,0.4);
+	border-top: 1px solid rgba(152,152,152,0.4);
+	border-left: 1px solid rgba(97,97,97,0.4);
+	border-right: 1px solid rgba(97,97,97,0.4);
+	border-bottom: 1px solid rgba(76,76,76,0.4);
+}
+
 .color {
-	background: #da563c;
+	background: rgba(218,86,60,0.88);
+	border-top: 1px solid rgba(231,141,124,0.88);
+	border-left: 1px solid rgba(198,70,44,0.88);
+	border-right: 1px solid rgba(198,70,44,0.88);
+	border-bottom: 1px solid #rgba(148,52,33,0.88);
+}
+
+.color:active {
+	background: rgba(218,86,60,1);
+	border-top: 1px solid rgba(231,141,124,1);
+	border-left: 1px solid rgba(198,70,44,1);
+	border-right: 1px solid rgba(198,70,44,1);
+	border-bottom: 1px solid #rgba(148,52,33,1);
 }
 
 .button span {
@@ -174,3 +203,76 @@ header li img {
 
 #norm { display:block; }
 #left { display:none; }
+
+/* Settings *******************************************************************/
+
+#settings {
+	margin: 8px;
+	position: relative;
+}
+
+#set-time {
+	line-height: 48px;
+	padding-left: 8px;
+	padding-right: 8px;
+	border-top: 1px solid rgba(0,0,0,0.14); 
+	border-bottom: 1px solid rgba(0,0,0,0.14); 
+}
+
+#set-time .value {
+	float: right; 
+	color: rgba(51,51,51,0.3);
+	display: inline-block;
+}
+
+#dictionary {
+	padding: 8px;
+}
+
+h2 {
+	padding: 8px;
+	color: rgba(0,0,0,0.4);
+	text-transform: uppercase;
+	font-size: 14px;
+	border-bottom: 2px solid rgba(0,0,0,0.4);
+}
+
+#dic {
+	display: block;
+	width: calc(100% - 16px);
+	padding: 0;
+	margin: 8px;
+	background: 0;
+	position: relative;
+	border: 0;
+	font-family: 'Roboto', sans-serif;
+	resize: none;
+}
+#dic + .nibs {
+	position: absolute;
+	border-left: 2px solid rgba(218,77,49,0.6);
+	border-right: 2px solid rgba(218,77,49,0.6);
+	border-bottom: 2px solid rgba(218,77,49,0.6);
+	height: 3px;
+	width: calc(100% - 16px);
+	left: 0;
+	bottom: -2px;
+	font-size: 18px;
+	margin-left: 6px;
+	margin-right: 6px;
+}
+#dic:hover + .nibs {
+	border-left: 2px solid rgba(218,77,49,1);
+	border-right: 2px solid rgba(218,77,49,1);
+	border-bottom: 2px solid rgba(218,77,49,1);
+}
+#dic:active + .nibs {
+	border-left: 2px solid rgba(218,77,49,1);
+	border-right: 2px solid rgba(218,77,49,1);
+	border-bottom: 2px solid rgba(218,77,49,1);
+}
+#dic:focus + .nibs {
+	border-left: 2px solid rgba(218,77,49,1);
+	border-right: 2px solid rgba(218,77,49,1);
+	border-bottom: 2px solid rgba(218,77,49,1);
+}
