@@ -11,39 +11,38 @@
 		<meta name="author" content="Tiger Oakes">
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<!-- JavaScript at the bottom. -->
 	</head>
-	<body onload="load()">
+	<body onload="load()";>
 		<header> <!-- Action Bar -->
 			<img src="img/ic_launcher.png" alt="Ticket Terms" class="launcher">
 			<h1>Ticket Terms</h1>
 			
 			<!-- Icons -->
 			<ul>
-				<li id="game-button">
-					<img id="start" src="img/start.png" alt="Start Game">
-					<img id="stop" src="img/stop.png" alt="End Game">
+				<li id="game-button" onclick="startStop()">
+					<img id="start" src="img/start.png" alt="Start Game" data-hidden="false">
+					<img id="stop" src="img/stop.png" alt="End Game" style="display:none;" data-hidden="true">
 				</li>
-				<li id="help-button"><img src="img/help.png" alt="Help"></li>
-				<li id="settings-button"><img src="img/settings.png" alt="Settings"></li>
+				<li id="help-button" onclick="articleTog('help')"><img src="img/help.png" alt="Help"></li>
+				<li id="settings-button" onclick="articleTog('settings')"><img src="img/settings.png" alt="Settings"></li>
 			</ul>
 		</header>
 		<main>
-			<article id="game">
-				<p id="word"><span id="word-item">word</span><span class="nibs"></span></p>
+			<article id="game" data-hidden="false">
+				<h2 style="margin: 0 8px; margin-top: 0.83em;">Game</h2>
+				<p id="word"><span id="word-item"> </span><span class="nibs"></span></p>
 				
 				<p class="next button color" onclick="next('next_btn')">
 					<span>Next</span> 
 					<img src="img/next.png" alt="Next">
 				</p>
-				<p class="skip button" style="margin-left: 0;" onclick="next(skip_btn)">
+				<p class="skip button" style="margin-left: 0;" onclick="next('skip_btn')">
 					<span>Skip</span>
 					<img src="img/skip.png" alt="Skip">
 				</p>
 				
 				<p class="time info">
-					<span>0:00.00</span> 
+					<span id="timeItem">0 seconds</span> 
 					<img id="norm" src="img/time.png" alt="Time Elasped">
 					<img id="left" src="img/time_left.png" alt="Time Remaining">
 					
@@ -55,13 +54,20 @@
 				</p>
 			</article>
 			
-			<article id="help">
+			<article id="help" data-hidden="true">
+				<h2>Help</h2>
+				<p style="padding: 0 8px;">Welcome to the party game Ticket Terms! When the game begins, a word from the dictonary will be 
+				displayed on the screen.  Your friends need to guess what word is on the 
+				screen, without looking.  You can give hints, but don't say the word.  
+				</p>
 			</article>
 			
-			<article id="settings">
+			<article id="settings" data-hidden="true">
+				<h2>Settings</h2>
 				<p id="set-time">
 					<span>Time Limit</span>
-					<span class="value">None</span>
+					<input name="timelimit" class="value" id="timeLimitItem" onblur="saveLimit()">
+					<span class="nibs"></span>
 				</p>
 				<p id="dictionary">
 					<h2>Dictionary</h2>
